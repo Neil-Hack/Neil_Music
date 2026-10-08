@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neil_-Musics</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+        
+    <!-- Boîte principale façon application -->
+    <div class="player-container">
+        <header>
+            <h1>Neil_-Musics 🎵</h1>
+            <p>Lecteur de playlist</p>
+        </header>
+
+        <!-- Le disque vinyle qui tourne -->
+        <div class="vinyl-container">
+            <div class="vinyl" id="vinyl-disc">
+                <!-- Le centre du disque qui affichera soit la photo du MP3, soit "Neil" -->
+                <div class="vinyl-label" id="vinyl-label">
+                    <span>Neil</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Morceaux</h2>
+            <ul>
+                <li data-src="media/Neil_Bonjour,_Bonjour.mp3">Neil_Bonjour,_Bonjour</li>
+                <li data-src="media/Neil_-_catch_me_-music_-_instrumental.mp3">Neil_-_catch_me_-music_-_instrumental</li>
+                <li data-src="media/Neil_-_remix_faded_-alan_walker.mp3">Neil_-_remix_faded_-alan_walker</li>
+                <li data-src="media/Neil_-_sur_la_fréquence.mp3">Neil_-_sur_la_fréquence</li>
+                <li data-src="media/Neil_-_lest_go_-electro_drill_OTT.mp3">Neil_-_lest_go_-electro_drill_OTT</li>
+                <li data-src="media/Neil_-_progresse-hous_-Garrix-_elect_instr-128BPM_ex.mp3">Neil_-_progresse-hous_-Garrix-_elect_instr-128BPM</li>
+                <li data-src="media/N-NEW SONG final (1).mp3">media/N-NEW SONG final</li>
+                <li data-src="media/Neil_electro-song_bonjour-bonjour_Chère Voix.mp3">Neil_electro-song_bonjour-bonjour_Chère Voix</li>
+                <li data-src="media/neil cegner pas.mp3">Neil_-_don't_be_afraid_of_death_-instrum</li>
+                <li data-src="media/neil beat elect finale.mp3">Neil_-_beat_electro-fil_-instrum</li>
+                <li data-src="media/Neil_-_control_-instrumental.mp3">Neil_-_control_-instrumental.</li>
+                <li data-src="media/neil faded fin.mp3">Neil_-_faded_remix_-Alan_walker_--instrum</li>
+                <li data-src="media/Neil_-_fong_noob_progod_instrumental.mp3">Neil_-_fong_noob_progod_instrumental</li>
+                <li data-src="media/Neil_-_remix_faded_-alan_walker (1).mp3">Neil_-_remix_faded_-alan_walker</li>
+                <li data-src="media/MDK ft Miss Lina - Leap of Faith Neil beat.mp3">MDK ft Miss Lina - Leap of Faith Neil beat</li>
+            </ul>
+        </section>
+
+        <!-- Les contrôles du lecteur -->
+        <div class="player-controls">
+            <!-- La barre de progression avec le curseur et le temps -->
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" min="0" max="100" step="1">
+                <span id="duration">0:00</span>
+            </div>
+
+            <!-- Les boutons de lecture avec tes images PNG -->
+            <div class="buttons">
+                <button id="prev" title="Précédent">
+                    <img src="media/Previous.png" alt="Previous">
+                </button>
+                <button id="play" title="Lecture / Pause">
+                    <img id="play-icon" src="media/Play.png" alt="Play">
+                </button>
+                <button id="reset" title="Remise à zéro">
+                    <img src="media/Reset.png" alt="Reset">
+                </button>
+                <button id="next" title="Suivant">
+                    <img src="media/Next.png" alt="Next">
+                </button>
+            </div>
+
+            <!-- Le lecteur audio -->
+            <audio id="audio-player"></audio>
+        </div>
+    </div>
+
+    <!-- Bibliothèque indispensable pour lire l'image cachée à l'intérieur du fichier MP3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

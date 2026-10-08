@@ -1,0 +1,220 @@
+/* Style général : on centre tout pour faire effet "application mobile / lecteur" */
+body {
+    background: linear-gradient(135deg, #1e1e2f, #0f0f1a);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Le conteneur principal */
+.player-container {
+    background-color: #26263b;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* En-tête du lecteur */
+header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #a2a2b5;
+    font-size: 0.9rem;
+}
+
+/* --- Styles pour le disque vinyle --- */
+.vinyl-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vinyl {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #111 30%, #222 31%, #111 40%, #000 70%);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #333;
+}
+
+.vinyl.spinning {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Le label au centre du disque */
+.vinyl-label {
+    width: 45px;
+    height: 45px;
+    background-color: #da91c6;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+    border: 2px solid #fff;
+    z-index: 2;
+}
+
+.vinyl-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* La liste des musiques */
+section h2 {
+    font-size: 1.1rem;
+    color: #a2a2b5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: #3d3d5c;
+    border-radius: 3px;
+}
+
+ul li {
+    background-color: #32324d;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ul li:hover {
+    background-color: #43436d;
+    cursor: pointer;
+}
+
+ul li.active {
+    background-color: #4e92f1;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* --- Styles pour les contrôles du lecteur --- */
+
+.player-controls {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #3d3d5c;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    color: #a2a2b5;
+}
+
+#progress-bar {
+    flex-grow: 1;
+    height: 6px;
+    background-color: #3d3d5c;
+    border-radius: 3px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #4e92f1;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+#progress-bar::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.buttons button img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+}
